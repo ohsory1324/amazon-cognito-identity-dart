@@ -215,6 +215,9 @@ class AuthenticationHelper {
     } else if ('89ABCDEFabcdef'.indexOf(hashStr[0]) != -1) {
       hashStr = '00$hashStr';
     }
+    if (hashStr.contains('-')) {
+      hashStr = hashStr.replaceAll('-', '0');
+    }
     return hashStr;
   }
 }
